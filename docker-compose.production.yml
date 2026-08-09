@@ -10,6 +10,11 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+	    interval: 5s
+        timeout: 5s
+        retries: 5
         
   backend:
     image: kolesnikyi/taski_backend # Качаем с Docker Hub
@@ -17,7 +22,8 @@ services:
     volumes:
       - static:/backend_static
     depends_on:
-      - db        
+      db:
+        condition: service_healthy        
   
   frontend:
     image: kolesnikyi/taski_frontend # Качаем с Docker Hub
