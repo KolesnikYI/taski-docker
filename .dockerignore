@@ -1,0 +1,38 @@
+# Игнорируем виртуальные окружения
+.venv/
+venv/
+env/
+
+# Кэш Python и инструментов
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Секреты
+.env
+*.pem
+*.key
+
+# Мусор операционных систем и IDE
+.git/
+.gitignore
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Локальные данные
+*.log
+*.sqlite3
+
+# Docker-файлы
+Dockerfile
+docker-compose.yml
+
+# Документация и тесты (опционально для продакшена)
+README.md
+tests/
