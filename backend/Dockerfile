@@ -10,12 +10,6 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 EXPOSE 8000
 
-COPY entrypoint.sh /app/entrypoint.sh
-
 COPY . . 
-
-RUN chmod +x /app/entrypoint.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
 
 CMD ["gunicorn", "backend.wsgi", "-w", "4", "-t", "600", "-b", "0.0.0.0:8000"]
