@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRECT_KEY', 'SECRET')
 
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['123.123.123.123', '127.0.0.1', 'localhost', 'ya-homework.online']
+ALLOWED_HOSTS = ['158.160.229.75', '127.0.0.1', 'localhost', 'ya-homework.online']
 
 
 # Application definition
